@@ -18,18 +18,17 @@ html{
     scroll-snap-type: inline mandatory;
     scrollbar-width: none;  /* Hide scrollbar for Firefox */
     scroll-behavior: smooth;
-    width: 480px;
+    width: 940px;
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-    z-index: 0;
     border-radius: 10px;
 }
 
 .carousel > *{
     scroll-snap-align: start;
   }
-  
+
 .carousel::-webkit-scrollbar { /* Hide scrollbar for Chrome, Safari and Opera */
     display: none;
 }
@@ -37,10 +36,11 @@ html{
 .image{
     border-radius: 10px;
     aspect-ratio: 60/35;
-    width: 480px;
-    height: 280px;
+    width: 940px;
+    height: 560px;
     position: relative;
     padding: 3rem 1.8rem;
+    background-position: center;
     background-size: cover;
 }
 
@@ -60,24 +60,27 @@ html{
     background-image: url("../public/assets/5.jpg");
 }
 
-.leftButton, .rightButton{
-    cursor: pointer;
+.buttonContainer{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.rightButton{
-    left: 95%;
-}
-
-.buttonSVG{
-    fill: rgb(255, 255, 255, 0.5);
+.slideButton{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255, 0.7);
+    font-size: 4rem;
     transition: all 0.2s;
+    font-family: 'Courier New', Courier, monospace;
 }
-.buttonSVG:hover{
-    fill: rgb(255, 255, 255, 0.8);
+
+.slideButton:hover{
+    color: rgb(255, 255, 255, 1);
 }
 
 .dotContainer{
@@ -86,7 +89,6 @@ html{
     position: absolute;
     top: 90%;
     left: 50%;
-    z-index: 1;
     transform: translate(-50%, 0);
     background-color: none;
     outline: 0;
@@ -97,6 +99,7 @@ html{
     background-color: rgb(255, 255, 255, 0);
     outline: 0;
     border: 0;
+    font-size: 3rem;
     cursor: pointer;
     color: rgb(255, 255, 255, 0.6);
     transition: all 0.2s;
